@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ProductCatalogue // Note: actual namespace depends on the project name.
 {
@@ -28,6 +29,28 @@ namespace ProductCatalogue // Note: actual namespace depends on the project name
 
             Movie newMovie = new Movie("Great Movie", "Joe", 100, "Its a movie that is super great", 45);
             Movie newMovie1 = new Movie("I love movies, too", "Erin", 45, "Now I've made a movie about how I love movies", 25);
+
+            Catalogue<Movie> productsForSale = new Catalogue<Movie>(newMovie, newMovie1);
+
+            Console.WriteLine(productsForSale);
+            
+            Console.WriteLine((productsForSale.First).Price);
+
+            Console.WriteLine((productsForSale.First).Title);
+
+            Console.WriteLine((productsForSale.Second).Title);
+
+
+            Catalogue<Book> myLibrary = new Catalogue<Book>(newBook, newBook1);
+
+            Console.WriteLine(myLibrary);
+
+            Console.WriteLine((myLibrary.First).Price);
+
+            Console.WriteLine((myLibrary.First).Title);
+
+            Console.WriteLine((myLibrary.Second).Title);
+
 
         }
     }

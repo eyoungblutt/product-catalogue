@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProductCatalogue
 {
-    internal class Movie : Product
+    internal class Movie :Product 
     {
 
-        private string _title { get => Title; }
+        private string _title { get => Title;  }
         private string _director { get => Director; }
         private int _runtime { get => Runtime; }
         private string _synposis { get => Synopsis; }
