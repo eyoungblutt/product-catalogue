@@ -27,9 +27,29 @@ namespace ProductCatalogue
             PageLength = pageLength;
             Synopsis = synopsis;
 
-            Console.WriteLine($" {title} by {author}: {synopsis}, {pageLength} pages, ${price}");
         }
 
+        //public void createBook(string title, string author, int pageLength, string synopsis, double price)
+        //{
+
+        //    Console.WriteLine("What is the title of the book?");
+        //    string Title = Console.ReadLine();
+
+        //    Console.WriteLine("Who is the author?");
+        //    string Author = Console.ReadLine();
+
+        //    Console.WriteLine("How many pages does your book have?");
+        //    double PageLength = Convert.ToInt32(Console.ReadLine());
+
+        //    Console.WriteLine("What is the synopsis?");
+        //    string Synopsis = Console.ReadLine();
+
+        //    Console.WriteLine("What is the price");
+        //    double Price = Convert.ToInt32(Console.ReadLine());
+
+        //    Console.WriteLine($" {this.Title} by {this.Author}: {this.Synopsis}, {this.PageLength} pages, ${this.Price}");
+
+        //}
 
     }
 }

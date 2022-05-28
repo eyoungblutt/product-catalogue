@@ -8,48 +8,59 @@ namespace ProductCatalogue // Note: actual namespace depends on the project name
         static void Main(string[] args)
         {
 
+            Console.WriteLine(mainMenu.mainMenuOptions());
+
+
+
+ //               - Create Catalogue(optional)
+ // - View a catalogue
+ //   -Add a new product to a catalogue
+ //- Remove a product
+ //   -Remove a catalogue
+
             //(string title, string author, int pageLength, string synopsis, double price) : base(price)
-           // Console.WriteLine("What is the title of the book?");
-           //Console.ReadLine();
-           // Console.WriteLine("Who is the author?");
-           // Console.ReadLine();
-           // Console.WriteLine("How many pages?");
-           // Convert.ToInt32(Console.ReadLine());
-           // Console.WriteLine("What is the synopsis?");
-           // Console.ReadLine();
-           // Console.WriteLine("What is the price");
-           // Convert.ToInt32(Console.ReadLine());
-
-            //Book newBook1 = new Book( Console.ReadLine(), Console.ReadLine(), Convert.ToInt32(Console.ReadLine()), Console.ReadLine(), Convert.ToInt32(Console.ReadLine()));
+            // Console.WriteLine("What is the title of the book?");
+            //Console.ReadLine();
+            // Console.WriteLine("Who is the author?");
+            // string author = Console.ReadLine();
+            // Console.WriteLine("How many pages?");
+            // int pageLength = Convert.ToInt32(Console.ReadLine());
+            // Console.WriteLine("What is the synopsis?");
+            // Console.ReadLine();
+            // Console.WriteLine("What is the price");
+            // Convert.ToInt32(Console.ReadLine());
 
 
-            Book newBook = new Book("Happy Book", "Erin", 65, "Its a book about Erin", 30);
-            Book newBook1 = new Book("I love books", "Erin", 15, "Its about how I super love books!!", 10);
+            //Book newBook1 = new Book( string author, Console.ReadLine(), Convert.ToInt32(Console.ReadLine()), Console.ReadLine(), Convert.ToInt32(Console.ReadLine()));
 
 
-            Movie newMovie = new Movie("Great Movie", "Joe", 100, "Its a movie that is super great", 45);
-            Movie newMovie1 = new Movie("I love movies, too", "Erin", 45, "Now I've made a movie about how I love movies", 25);
-
-            Catalogue<Movie> productsForSale = new Catalogue<Movie>(newMovie, newMovie1);
-
-            Console.WriteLine(productsForSale);
-            
-            Console.WriteLine((productsForSale.First).Price);
-
-            Console.WriteLine((productsForSale.First).Title);
-
-            Console.WriteLine((productsForSale.Second).Title);
+            //Book newBook = new Book("Happy Book", "Erin", 65, "Its a book about Erin", 30);
+            //Book newBook1 = new Book("I love books", "Erin", 15, "Its about how I super love books!!", 10);
 
 
-            Catalogue<Book> myLibrary = new Catalogue<Book>(newBook, newBook1);
+            //Movie newMovie = new Movie("Great Movie", "Joe", 100, "Its a movie that is super great", 45);
+            //Movie newMovie1 = new Movie("I love movies, too", "Erin", 45, "Now I've made a movie about how I love movies", 25);
 
-            Console.WriteLine(myLibrary);
+            //Catalogue<Movie> productsForSale = new Catalogue<Movie>(newMovie, newMovie1);
 
-            Console.WriteLine((myLibrary.First).Price);
+            //Console.WriteLine(productsForSale);
 
-            Console.WriteLine((myLibrary.First).Title);
+            //Console.WriteLine((productsForSale.First).Price);
 
-            Console.WriteLine((myLibrary.Second).Title);
+            //Console.WriteLine((productsForSale.First).Title);
+
+            //Console.WriteLine((productsForSale.Second).Title);
+
+
+            //Catalogue<Book> myLibrary = new Catalogue<Book>(newBook, newBook1);
+
+            //Console.WriteLine(myLibrary);
+
+            //Console.WriteLine((myLibrary.First).Price);
+
+            //Console.WriteLine((myLibrary.First).Title);
+
+            //Console.WriteLine((myLibrary.Second).Title);
 
 
         }
