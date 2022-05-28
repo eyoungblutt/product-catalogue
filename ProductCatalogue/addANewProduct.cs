@@ -37,10 +37,10 @@ namespace ProductCatalogue
                     Console.WriteLine("What is the price");
                     double Price = Convert.ToInt32(Console.ReadLine());
 
-                    Console.WriteLine($" {Title} by {Director}: {Synopsis}, {Runtime} mins, ${Price}");
-                    // currently aren't having base mark up happening.
-                    //Also not being added to anything atm just being added to console.
-                    
+                    Movie newMovie = new Movie($"{Title}, {Director}, {Runtime}, {Synopsis}, {Price}");
+
+
+                    Console.WriteLine($"{Title} as been added to your catalogue");
 
                     break;
 
@@ -64,7 +64,7 @@ namespace ProductCatalogue
                     Console.WriteLine("What is the price");
                     double price = Convert.ToInt32(Console.ReadLine());
 
-                    Console.WriteLine($" {title} by {author}: {synopsis}, {pageLength} pages, ${price}");
+                    //Console.WriteLine($" {title} by {author}: {synopsis}, {pageLength} pages, ${price}");
                     break;
 
             }
