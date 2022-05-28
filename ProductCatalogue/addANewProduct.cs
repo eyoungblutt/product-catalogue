@@ -37,13 +37,20 @@ namespace ProductCatalogue
                     Console.WriteLine("What is the price");
                     double Price = Convert.ToInt32(Console.ReadLine());
 
-                    Movie newMovie = new Movie($"{Title}, {Director}, {Runtime}, {Synopsis}, {Price}");
+                    Movie newMovie = new Movie(Title, Director, Runtime, Synopsis, Price);
 
 
-                    Console.WriteLine($"{Title} as been added to your catalogue");
+                    Catalogue<Movie> newCatalogue = new Catalogue<Movie>(newMovie);
+                   
+                    Console.WriteLine(newMovie.Title);
+
+                    Console.WriteLine($"{Title} has been added to your catalogue");
+
+                    //Console.WriteLine(newCatalogue.First.ToString);
+                    //getting catalogue and list of objects to appear on console.
+
 
                     break;
-
 
                 case "2":
                     Console.WriteLine("You have selected Book");
@@ -64,7 +71,15 @@ namespace ProductCatalogue
                     Console.WriteLine("What is the price");
                     double price = Convert.ToInt32(Console.ReadLine());
 
-                    //Console.WriteLine($" {title} by {author}: {synopsis}, {pageLength} pages, ${price}");
+                    Book newBook = new Book(title, author, pageLength, synopsis, price);
+
+
+                    Catalogue<Book> newCatalogue1 = new Catalogue<Book>(newBook);
+
+                    Console.WriteLine(newBook.Title);
+
+                    Console.WriteLine($"{title} has been added to your catalogue");
+
                     break;
 
             }

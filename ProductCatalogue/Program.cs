@@ -8,27 +8,19 @@ namespace ProductCatalogue // Note: actual namespace depends on the project name
         static void Main(string[] args)
         {
 
-            Console.WriteLine(mainMenu.mainMenuOptions());
+            //Console.WriteLine(mainMenu.mainMenuOptions());
+            //List<string> ItemList = new List<string>();
+            //Console.WriteLine("Items Added To Inventory Are: "); // Outputs List in reverse order. (Recent input first).
+            //for (int i = 0; i < 10; i++) // Continue For Loop until i is < the needed amount.
+            //{
+            //    Console.WriteLine($"{i + 1}: Enter Item Name To Add To Inventory"); // Asks for user input into array.
+            //    var ListInput = Console.ReadLine(); // User inputs value into field.
+            //    ItemList.Add(ListInput);
+            //}
 
 
 
- //               - Create Catalogue(optional)
- // - View a catalogue
- //   -Add a new product to a catalogue
- //- Remove a product
- //   -Remove a catalogue
 
-            //(string title, string author, int pageLength, string synopsis, double price) : base(price)
-            // Console.WriteLine("What is the title of the book?");
-            //Console.ReadLine();
-            // Console.WriteLine("Who is the author?");
-            // string author = Console.ReadLine();
-            // Console.WriteLine("How many pages?");
-            // int pageLength = Convert.ToInt32(Console.ReadLine());
-            // Console.WriteLine("What is the synopsis?");
-            // Console.ReadLine();
-            // Console.WriteLine("What is the price");
-            // Convert.ToInt32(Console.ReadLine());
 
 
             //Book newBook1 = new Book( string author, Console.ReadLine(), Convert.ToInt32(Console.ReadLine()), Console.ReadLine(), Convert.ToInt32(Console.ReadLine()));

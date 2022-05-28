@@ -11,26 +11,18 @@ namespace ProductCatalogue
     {
 
         private T[] _catalogueMain = new T[2];
-
         public T First => _catalogueMain[0];
         public T Second => _catalogueMain[1];
 
-        public Catalogue(T first, T second)
+        public Catalogue(T first)
         {
             _catalogueMain[0] = first;
-            _catalogueMain[1] = second;
-
-            //for(int i = 0; i < _catalogueMain.Length; i++)
-            //{
-            //    Console.WriteLine($"{0}", _catalogueMain[i]);
-            //}
-
 
         }
 
         public override string ToString()
         {
-            return $"1. {_catalogueMain[0]}; 2. {_catalogueMain[1]}";
+            return $"1. {_catalogueMain[0]}";
         }
 
 

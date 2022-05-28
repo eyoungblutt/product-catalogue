@@ -25,27 +25,31 @@ namespace ProductCatalogue
             {
 
                 case "1":
-                    Console.WriteLine("You have chosen option 1");
+                    Console.WriteLine("You have chosen 'Create a new Catalogue' ");
+                    Console.WriteLine();
+                    Console.WriteLine(createNewCataloguecs.createNewCatalogueStatement());
+
                     break;
-                //put in method to be executed. create a catalogue
-                case "2":
+    
+    
+    case "2":
                     Console.WriteLine("You have chosen option 2");
                     Console.WriteLine("You have chosen to view your catalogue.");
-
                     break;
                 //vie catalogue method
                 case "3":
                     Console.WriteLine("You have chosen 'Add New Product to Catalogue' ");
                     Console.WriteLine();
                     Console.WriteLine(addANewProduct.addANewProductStatement());
-
                     break;
-                // ad new product to catalogue
+
                 case "4":
                     Console.WriteLine();
+                    //remove a product
                     break;
                 case "5":
                     Console.WriteLine();
+                    //remove a catalogue
                     break;
             }
 
