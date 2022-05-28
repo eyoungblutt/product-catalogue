@@ -27,7 +27,9 @@ namespace ProductCatalogue
             PageLength = pageLength;
             Synopsis = synopsis;
 
+
         }
+
 
         //public void createBook(string title, string author, int pageLength, string synopsis, double price)
         //{
