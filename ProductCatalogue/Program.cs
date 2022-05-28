@@ -8,7 +8,9 @@ namespace ProductCatalogue // Note: actual namespace depends on the project name
         static void Main(string[] args)
         {
 
-            //Console.WriteLine(mainMenu.mainMenuOptions());
+            Console.WriteLine(mainMenu.mainMenuOptions());
+
+
             //List<string> ItemList = new List<string>();
             //Console.WriteLine("Items Added To Inventory Are: "); // Outputs List in reverse order. (Recent input first).
             //for (int i = 0; i < 10; i++) // Continue For Loop until i is < the needed amount.

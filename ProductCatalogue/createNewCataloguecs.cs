@@ -11,9 +11,15 @@ namespace ProductCatalogue
 
         public static bool createNewCatalogueStatement()
         {
-                    Product[] newCatalogue = new Product[0];
+               Product[] newCatalogue = new Product[0];
+            //dont think this is rights
             return true;
+        }
 
+        public  static void viewCatalogue()
+        {
+            Console.WriteLine();
+            //maybe
         }
     }
 }

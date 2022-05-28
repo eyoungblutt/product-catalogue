@@ -30,13 +30,15 @@ namespace ProductCatalogue
                     Console.WriteLine(createNewCataloguecs.createNewCatalogueStatement());
 
                     break;
-    
-    
-    case "2":
-                    Console.WriteLine("You have chosen option 2");
-                    Console.WriteLine("You have chosen to view your catalogue.");
+
+
+                case "2":
+                    Console.WriteLine("You have chosen to 'View your Catalogue.");
+                    Console.WriteLine();
+
                     break;
                 //vie catalogue method
+
                 case "3":
                     Console.WriteLine("You have chosen 'Add New Product to Catalogue' ");
                     Console.WriteLine();
@@ -44,11 +46,11 @@ namespace ProductCatalogue
                     break;
 
                 case "4":
-                    Console.WriteLine();
-                    //remove a product
+                    Console.WriteLine("You have chosen to 'Remove a Product'");
+                    
                     break;
                 case "5":
-                    Console.WriteLine();
+                    Console.WriteLine("You have chosen to 'Remove a Catalogue'");
                     //remove a catalogue
                     break;
             }
