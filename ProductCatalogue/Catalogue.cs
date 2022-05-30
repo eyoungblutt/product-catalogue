@@ -22,14 +22,20 @@ namespace ProductCatalogue
 
         }
 
-        public static void viewCatalogue()
+
+        public static bool viewCatalogue()
         {
-                    for (int i = 0; i < list.Count; i++)
-                    {
-                        Console.WriteLine($"{i}: {list}");
-                    }
+            foreach (T Title in list)
+            {
+                 Console.WriteLine($"{Title}");
+            }
+            return true;
         }
 
+        public override string ToString()
+        {
+            return $" ";
+        }
         public double CalculateTotal(double price)
         {
             double total = 0;

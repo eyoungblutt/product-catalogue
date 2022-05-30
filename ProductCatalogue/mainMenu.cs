@@ -27,23 +27,30 @@ namespace ProductCatalogue
                     Console.WriteLine("You have chosen 'Add New Product to Catalogue' ");
                     Console.WriteLine();
                     Console.WriteLine(addANewProduct.addANewProductStatement());
+                    mainMenu.mainMenuOptions();
                     break;
 
                 case "2":
                     Console.WriteLine("You have chosen to 'View your Catalogue.");
-                    
+                    Console.WriteLine(Catalogue<Movie>.viewCatalogue());
+                    mainMenu.mainMenuOptions();
+
+
 
                     break;
                 //vie catalogue method
 
                 case "3":
                     Console.WriteLine("You have chosen to 'Remove a Product'");
-                    
+                    mainMenu.mainMenuOptions();
+
                     break;
 
                 case "4":
                     Console.WriteLine("You have chosen to 'Remove a Catalogue'");
                     //remove a catalogue
+                    mainMenu.mainMenuOptions();
+
                     break;
             }
 
