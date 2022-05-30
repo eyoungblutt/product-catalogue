@@ -9,40 +9,33 @@ namespace ProductCatalogue
     internal class Catalogue<T> where T : Product
         //this is the list within which your products will be stored. Can be more then one catalogue
     {
+        public static List<T> list = new List<T>();
 
-        private T[] _catalogueMain = new T[2];
-        public T First => _catalogueMain[0];
-        public T Second => _catalogueMain[1];
-
-        public Catalogue(T first)
+        public static void addProduct(T product)
         {
-            _catalogueMain[0] = first;
+            list.Add(product);
+        }
+
+        public static void removeProduct(T product)
+        {
+            list.Remove(product);
 
         }
 
-        public override string ToString()
+        public static void viewCatalogue()
         {
-            return $"1. {_catalogueMain[0]}";
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                        Console.WriteLine($"{i}: {list}");
+                    }
         }
 
-
-        public void newCatalogue(T item)
-        {
-            _catalogueMain[0] = item;
-        }
-
-        // -   A CalculateTotal method that adds together the CalculateTax of all the contained products
-        //public double CalculateTax()
-        //{
-        //    double markup = Price * 0.1;
-        //    return Price + markup;
-        //}
         public double CalculateTotal(double price)
         {
             double total = 0;
-            foreach (T item in _catalogueMain)
+            foreach (T item in list)
             {
-                total = total + price;
+                total += price;
                 return total;
             }
             return 0;

@@ -15,23 +15,7 @@ namespace ProductCatalogue
         public Product(double price)
         {
             Price = price;
-
-            // could I also include title?
-            // and synopsis??
         }
-
-
-
-
-        //        POTENTIAL PRODUCTS FOR MY BOOK SHOP:
-        //        Board games.
-        //        Educational games.
-        //        Journals and notebooks.
-        //        Toys.
-        //        Movies and albums.
-        //        Maps.
-        //        Bookmarks.
-
         public double CalculateTax()
         {
             double markup = Price * 0.1;
