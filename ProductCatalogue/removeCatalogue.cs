@@ -6,25 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductCatalogue
 {
-    //    internal class removeCatalogue
-    //    {
-
-    //        //example this clears a list
-
-    //        using System;
-    //using System.Collections.Generic;
-    //public class Program
-    //    {
-    //        public static void Main()
-    //        {
-    //            List<string> myList = new List<string>() {
-    //         "one",
-    //         "two",
-    //         "three",
-    //         "four",
-    //         "five",
-    //         "six"
-    //      };
+    
     //            foreach (string str in myList)
     //            {
     //                Console.WriteLine(str);

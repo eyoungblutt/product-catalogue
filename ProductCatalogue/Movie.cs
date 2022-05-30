@@ -28,6 +28,11 @@ namespace ProductCatalogue
           Synopsis = synopsis;
 
         }
+
+        public static Movie createNewMovie(string title, string director, double runtime, string synopsis, double price)
+        {
+            return new Movie(title, director, runtime, synopsis, price);
+        }
     }
 }
 

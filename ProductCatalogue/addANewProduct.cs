@@ -37,24 +37,16 @@ namespace ProductCatalogue
                     Console.WriteLine("What is the price");
                     double Price = Convert.ToInt32(Console.ReadLine());
 
-                    Movie newMovie = new Movie(Title, Director, Runtime, Synopsis, Price);
+                    Catalogue<Movie>.addProduct(Movie.createNewMovie(Title, Director, Runtime, Synopsis, Price));
 
 
-                    Catalogue<Movie> newCatalogue = new Catalogue<Movie>(newMovie);
-                   
-                    Console.WriteLine(newMovie.Title);
-
-                    Console.WriteLine($"{Title} has been added to your catalogue");
-
-                    //Console.WriteLine(newCatalogue.First.ToString);
-                    //getting catalogue and list of objects to appear on console.
+                    Console.WriteLine($"{Title} by {Director} : {Synopsis}, {Runtime} ${Price} has been added to your movie catalogue");
 
 
                     break;
 
                 case "2":
                     Console.WriteLine("You have selected Book");
-                    //  Console.WriteLine(Book.createBook);
 
                     Console.WriteLine("What is the title of the book?");
                     string title = Console.ReadLine();
@@ -71,14 +63,9 @@ namespace ProductCatalogue
                     Console.WriteLine("What is the price");
                     double price = Convert.ToInt32(Console.ReadLine());
 
-                    Book newBook = new Book(title, author, pageLength, synopsis, price);
+                    Catalogue<Book>.addProduct(Book.createNewBook(title, author, pageLength, synopsis, price));
 
-
-                    Catalogue<Book> newCatalogue1 = new Catalogue<Book>(newBook);
-
-                    Console.WriteLine(newBook.Title);
-
-                    Console.WriteLine($"{title} has been added to your catalogue");
+                    Console.WriteLine($"{title} by {author} : {synopsis}, {pageLength} ${price} has been added to your book catalogue");
 
                     break;
 

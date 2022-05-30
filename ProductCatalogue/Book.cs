@@ -30,5 +30,10 @@ namespace ProductCatalogue
 
         }
 
+        public static Book createNewBook(string title, string author, double pageLength, string synopsis, double price)
+        {
+          return new Book(title, author, pageLength, synopsis, price);
+        }
+
     }
 }

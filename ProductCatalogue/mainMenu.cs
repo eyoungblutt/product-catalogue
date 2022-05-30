@@ -12,11 +12,10 @@ namespace ProductCatalogue
         {
             Console.WriteLine("Menu Options:");
             Console.WriteLine();
-            Console.WriteLine("1 - Create Catalogue");
+            Console.WriteLine("1 - Add New Product to Catalogue");
             Console.WriteLine("2 - View Catalugue");
-            Console.WriteLine("3 - Add New Product to Catalogue");
-            Console.WriteLine("4 - Remove a Product");
-            Console.WriteLine("5 - Remove Catalogue");
+            Console.WriteLine("3 - Remove a Product");
+            Console.WriteLine("4 - Remove Catalogue");
 
             Console.WriteLine("Select an option number: ");
 
@@ -25,31 +24,24 @@ namespace ProductCatalogue
             {
 
                 case "1":
-                    Console.WriteLine("You have chosen 'Create a new Catalogue' ");
-                    Console.WriteLine();
-                    Console.WriteLine(createNewCataloguecs.createNewCatalogueStatement());
-
-                    break;
-
-
-                case "2":
-                    Console.WriteLine("You have chosen to 'View your Catalogue.");
-                    Console.WriteLine();
-
-                    break;
-                //vie catalogue method
-
-                case "3":
                     Console.WriteLine("You have chosen 'Add New Product to Catalogue' ");
                     Console.WriteLine();
                     Console.WriteLine(addANewProduct.addANewProductStatement());
                     break;
 
-                case "4":
+                case "2":
+                    Console.WriteLine("You have chosen to 'View your Catalogue.");
+                    
+
+                    break;
+                //vie catalogue method
+
+                case "3":
                     Console.WriteLine("You have chosen to 'Remove a Product'");
                     
                     break;
-                case "5":
+
+                case "4":
                     Console.WriteLine("You have chosen to 'Remove a Catalogue'");
                     //remove a catalogue
                     break;
