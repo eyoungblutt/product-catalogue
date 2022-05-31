@@ -23,11 +23,12 @@ namespace ProductCatalogue
         }
 
         public static void viewCatalogue()
-        {
+         {
                     for (int i = 0; i < list.Count; i++)
                     {
                         Console.WriteLine($"{i}: {list}");
                     }
+                    
         }
 
         public double CalculateTotal(double price)

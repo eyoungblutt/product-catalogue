@@ -42,7 +42,7 @@ namespace ProductCatalogue
 
                     Console.WriteLine($"{Title} by {Director} : {Synopsis}, {Runtime} ${Price} has been added to your movie catalogue");
 
-
+                    mainMenu.mainMenuOptions();
                     break;
 
                 case "2":
@@ -66,6 +66,8 @@ namespace ProductCatalogue
                     Catalogue<Book>.addProduct(Book.createNewBook(title, author, pageLength, synopsis, price));
 
                     Console.WriteLine($"{title} by {author} : {synopsis}, {pageLength} ${price} has been added to your book catalogue");
+
+                    mainMenu.mainMenuOptions();
 
                     break;
 

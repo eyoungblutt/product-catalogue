@@ -30,9 +30,9 @@ namespace ProductCatalogue
                     break;
 
                 case "2":
-                    Console.WriteLine("You have chosen to 'View your Catalogue.");
-                    
-
+                    Console.WriteLine("You have chosen to 'View your Catalogue.'");
+                   Catalogue<Product>.viewCatalogue();
+                    // not correct 
                     break;
                 //vie catalogue method
 

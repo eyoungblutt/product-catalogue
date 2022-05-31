@@ -7,8 +7,7 @@ namespace ProductCatalogue // Note: actual namespace depends on the project name
     {
         static void Main(string[] args)
         {
-            Catalogue<Book> bookCatalogue = new Catalogue<Book>(); //creating a book catalogue
-            Catalogue<Movie> movieCatalogue = new Catalogue<Movie>();
+       
 
             //Two hardcoded catalogues for the user to use
 
@@ -20,6 +19,6 @@ namespace ProductCatalogue // Note: actual namespace depends on the project name
 
           
 
-        }
+         }
     }
 }
