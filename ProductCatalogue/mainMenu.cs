@@ -8,8 +8,20 @@ namespace ProductCatalogue
 {
     internal class mainMenu
     {
-        public static bool mainMenuOptions()
+        public Catalogue<Book> bookCatalogue;
+        public Catalogue<Movie> movieCatalogue;
+
+        public mainMenu(Catalogue<Book> BookCatalogue, Catalogue<Movie> MovieCatalogue)
         {
+            bookCatalogue = BookCatalogue;
+            movieCatalogue = MovieCatalogue;
+
+        }
+
+
+        public bool mainMenuOptions()
+        {
+
             Console.WriteLine("Menu Options:");
             Console.WriteLine();
             Console.WriteLine("1 - Add New Product to Catalogue");
@@ -26,19 +38,19 @@ namespace ProductCatalogue
                 case "1":
                     Console.WriteLine("You have chosen 'Add New Product to Catalogue' ");
                     Console.WriteLine();
-                    Console.WriteLine(addANewProduct.addANewProductStatement());
+                    Console.WriteLine(addANewProduct.addANewProductStatement(bookCatalogue, movieCatalogue));
                     break;
 
                 case "2":
                     Console.WriteLine("You have chosen to 'View your Catalogue.'");
-                   Catalogue<Product>.viewCatalogue();
+                    //Catalogue<Product>.viewCatalogue();
                     // not correct 
                     break;
                 //vie catalogue method
 
                 case "3":
                     Console.WriteLine("You have chosen to 'Remove a Product'");
-                    
+
                     break;
 
                 case "4":
@@ -46,9 +58,11 @@ namespace ProductCatalogue
                     //remove a catalogue
                     break;
             }
-
             return true;
-
         }
+
     }
 }
+
+
+

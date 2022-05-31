@@ -9,7 +9,7 @@ namespace ProductCatalogue
     internal class addANewProduct
     {
 
-        public static bool addANewProductStatement()
+        public static bool addANewProductStatement(Catalogue<Book> bookCatalogue, Catalogue<Movie> movieCatalogue)
         {
             Console.WriteLine("These are our product options:");
             Console.WriteLine("1 - Movie");
@@ -35,14 +35,15 @@ namespace ProductCatalogue
                     string Synopsis = Console.ReadLine();
 
                     Console.WriteLine("What is the price");
+                    
                     double Price = Convert.ToInt32(Console.ReadLine());
 
-                    Catalogue<Movie>.addProduct(Movie.createNewMovie(Title, Director, Runtime, Synopsis, Price));
+                    movieCatalogue.addProduct(Movie.createNewMovie(Title, Director, Runtime, Synopsis, Price));
 
 
                     Console.WriteLine($"{Title} by {Director} : {Synopsis}, {Runtime} ${Price} has been added to your movie catalogue");
 
-                    mainMenu.mainMenuOptions();
+                   //Console.WriteLine(Program.());
                     break;
 
                 case "2":
@@ -63,12 +64,13 @@ namespace ProductCatalogue
                     Console.WriteLine("What is the price");
                     double price = Convert.ToInt32(Console.ReadLine());
 
-                    Catalogue<Book>.addProduct(Book.createNewBook(title, author, pageLength, synopsis, price));
+                    Book newBook = new Book(title, author, pageLength, synopsis, price);
+
+                    bookCatalogue.addProduct(Book.createNewBook(title, author, pageLength, synopsis, price));
 
                     Console.WriteLine($"{title} by {author} : {synopsis}, {pageLength} ${price} has been added to your book catalogue");
 
-                    mainMenu.mainMenuOptions();
-
+                   
                     break;
 
             }

@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace ProductCatalogue
 {
-    internal class Catalogue<T> where T : Product
+    internal  class Catalogue<T> where T : Product
         //this is the list within which your products will be stored. Can be more then one catalogue
     {
-        public static List<T> list = new List<T>();
-
-        public static void addProduct(T product)
+        public List<T> list = new List<T>();
+        
+        public void addProduct(T product)
         {
             list.Add(product);
         }
 
-        public static void removeProduct(T product)
+        public void removeProduct(T product)
         {
             list.Remove(product);
 
         }
 
-        public static void viewCatalogue()
+        public void viewCatalogue()
          {
                     for (int i = 0; i < list.Count; i++)
                     {

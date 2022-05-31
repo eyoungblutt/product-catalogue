@@ -19,7 +19,6 @@ namespace ProductCatalogue
         public double Runtime;
         public string Synopsis;
 
-
         public Movie(string title, string director, double runtime, string synopsis, double price) : base(price)
         {
             Title = title;
