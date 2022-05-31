@@ -43,8 +43,26 @@ namespace ProductCatalogue
 
                 case "2":
                     Console.WriteLine("You have chosen to 'View your Catalogue.'");
-                    //Catalogue<Product>.viewCatalogue();
-                    // not correct 
+                    Console.WriteLine();
+                    Console.WriteLine("1 - View Book Catalogue");
+                    Console.WriteLine("2 - View Movie Catalugue");
+
+                    if (Console.ReadLine() == "1")
+                    {
+                        foreach (Book book in bookCatalogue.list)
+                        {
+                            Console.WriteLine(book.Title);
+                        }
+                    }
+                    if (Console.ReadLine() == "2")
+                    {
+                        foreach (Movie movie in movieCatalogue.list)
+                        {
+                            Console.WriteLine(movie.Title);
+                        }
+                        //Console.WriteLine(movieCatalogue.viewCatalogue());
+                    }
+
                     break;
                 //vie catalogue method
 

@@ -20,12 +20,17 @@ namespace ProductCatalogue // Note: actual namespace depends on the project name
             movieCatalogue.addProduct(newMovie);
             movieCatalogue.addProduct(newMovie1);
 
-
-            foreach(Movie movie in movieCatalogue)
+            //Console.WriteLine(movieCatalogue.viewCatalogue());
+            
+            while (true)
             {
-                Console.WriteLine(movie.Title);
+                Console.WriteLine(newMenu.mainMenuOptions());
             }
-
+            
+            //foreach(Movie movie in movieCatalogue.list)
+            //{
+            //    Console.WriteLine(movie.Title);
+            //}
         }
 
 

@@ -22,14 +22,17 @@ namespace ProductCatalogue
 
         }
 
-        public void viewCatalogue()
-         {
-                    for (int i = 0; i < list.Count; i++)
-                    {
-                        Console.WriteLine($"{i}: {list}");
-                    }
-                    
-        }
+        //public bool viewCatalogue(T product)
+        //{
+
+        //    foreach (T product in list)
+        //    {
+        //        Console.WriteLine(item);
+        //    }
+        //    return true;
+
+
+        //}
 
         public double CalculateTotal(double price)
         {
