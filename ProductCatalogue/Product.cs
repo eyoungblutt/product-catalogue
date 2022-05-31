@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductCatalogue
 {
-    internal abstract class Product
+    public abstract class Product
     {
         private double _price { get => Price; }
 

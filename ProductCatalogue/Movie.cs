@@ -30,6 +30,34 @@ namespace ProductCatalogue
 
         public static Movie createNewMovie(string title, string director, double runtime, string synopsis, double price)
         {
+            if (title == null)
+            {
+                throw new ArgumentNullException("title unknown");
+            }
+            if (director == null)
+            {
+                throw new ArgumentNullException("author unknown");
+            }
+            if (runtime == null)
+            {
+                throw new ArgumentNullException("pageLength unknown");
+            }
+            if (synopsis == null)
+            {
+                throw new ArgumentNullException("synopsis unknown");
+            }
+            if (price == null)
+            {
+                throw new ArgumentNullException("price unknown");
+            }
+            if (runtime < 0)
+            {
+                throw new Exception("runtime can not be negative");
+            }
+            if (price < 0)
+            {
+                throw new Exception("price can not be negative");
+            }
             return new Movie(title, director, runtime, synopsis, price);
         }
     }
