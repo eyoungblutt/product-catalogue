@@ -31,24 +31,28 @@ namespace ProductCatalogue // Note: actual namespace depends on the project name
             movieCatalogue.addProduct(newMovie1);
 
             //Console.WriteLine(movieCatalogue.viewCatalogue());
-            
+
             //while (true)
             //{
             //    Console.WriteLine(newMenu.mainMenuOptions());
             //}
 
-            //foreach(Movie movie in movieCatalogue.list)
+            //foreach (Movie movie in movieCatalogue.list)
             //{
             //    Console.WriteLine(movie.Title);
-            //}
+            //} //- this works
 
-           string filePath = Path.Combine(Directory.GetCurrentDirectory(), "moviecatalogue.JSON");
-            Console.WriteLine(filePath);
-           File.Create(filePath).Close();
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "moviecatalogue.JSON");
+
+            File.Create(filePath).Close();
+
 
             string jsonObject = JsonSerializer.Serialize<Movie>(newMovie);
             Console.WriteLine(jsonObject);
             File.WriteAllText(filePath, jsonObject);
+
+
+            //Append text??
 
         }
 

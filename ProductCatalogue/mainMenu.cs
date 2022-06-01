@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ProductCatalogue
 {
     internal class mainMenu
@@ -49,20 +50,13 @@ namespace ProductCatalogue
 
                     if (Console.ReadLine() == "1")
                     {
-                        foreach (Book book in bookCatalogue.list)
-                        {
-                            Console.WriteLine(book.Title);
-                        }
+                       
+                      //  Catalogue<Book>.viewCatalogue(Catalogue<Book> bookCatalogue);
                     }
-                    if (Console.ReadLine() == "2")
+                    else if (Console.ReadLine() == "2")
                     {
-                        foreach (Movie movie in movieCatalogue.list)
-                        {
-                            Console.WriteLine(movie.Title);
-                        }
-                        //Console.WriteLine(movieCatalogue.viewCatalogue());
+                     // Catalogue<Movie>.viewCatalogue(IEnumerable<Movie>movieCatalogue);
                     }
-
                     break;
                 //vie catalogue method
 
