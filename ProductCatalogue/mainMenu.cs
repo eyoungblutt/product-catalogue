@@ -50,14 +50,13 @@ namespace ProductCatalogue
                     Console.WriteLine("2 - View Movie Catalugue");
 
                     if (Console.ReadLine() == "1")
-                    {
-
-                        Catalogue<Book>.viewCatalogue(IEnumerable<Book> bookCatalogue);
-                    }
-                    else if (Console.ReadLine() == "2")
-                    {
-                        Catalogue<Movie>.viewCatalogue(IEnumerable<Movie> movieCatalogue);
-                    }
+             
+                        bookCatalogue.viewCatalogue(bookCatalogue.list);
+                    break;
+                     if (Console.ReadLine() == "2")
+                    
+                        movieCatalogue.viewCatalogue(movieCatalogue.list);
+                    
                     break;
                 //vie catalogue method
 
@@ -67,15 +66,21 @@ namespace ProductCatalogue
                     Console.WriteLine("1 - Remove from Book Catalogue");
                     Console.WriteLine("2 - Remove from Movie Catalugue");
                     if (Console.ReadLine() == "1")
-                    {
+                    
+                        bookCatalogue.viewCatalogue(bookCatalogue.list);
 
-                       Catalogue<Book>.removeProduct(Catalogue<Book>.bookCatalogue);
-                    }
-                    else if ((Console.ReadLine() == "2"))
-                    {
-                       Catalogue<Movie>.removeProduct(Catalogue<Movie>movieCatalogue);
+                        Console.WriteLine("What number do you want to remove - starting from zero?");
+                        int number = Int32.Parse(Console.ReadLine());
 
-                    }
+                        bookCatalogue.removeProduct(number);
+                    break;
+                     if ((Console.ReadLine() == "2"))
+                    
+                        movieCatalogue.viewCatalogue(movieCatalogue.list);
+                        Console.WriteLine("What number do you want to remove - starting from zero?");
+                        int number1 = Int32.Parse(Console.ReadLine());
+                        movieCatalogue.removeProduct(number1);
+                    
                     break;
 
 
@@ -83,6 +88,7 @@ namespace ProductCatalogue
                     Console.WriteLine("You have chosen to 'Remove a Catalogue'");
                     //remove a catalogue
                     break;
+
             }
             return true;
         }

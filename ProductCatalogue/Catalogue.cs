@@ -17,9 +17,9 @@ namespace ProductCatalogue
             list.Add(product);
         }
 
-        public void removeProduct(T product)
+        public void removeProduct(int index)
         {
-            list.Remove(product);
+            list.RemoveAt(index);
 
         }
 
