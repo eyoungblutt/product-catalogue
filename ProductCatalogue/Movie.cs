@@ -38,7 +38,7 @@ namespace ProductCatalogue
             {
                 throw new ArgumentNullException("author unknown");
             }
-            if (runtime == null)
+            if (runtime == 0)
             {
                 throw new ArgumentNullException("pageLength unknown");
             }
@@ -46,7 +46,7 @@ namespace ProductCatalogue
             {
                 throw new ArgumentNullException("synopsis unknown");
             }
-            if (price == null)
+            if (price == 0)
             {
                 throw new ArgumentNullException("price unknown");
             }

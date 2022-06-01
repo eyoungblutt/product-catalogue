@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ProductCatalogue
 {
     internal  class Catalogue<T> where T : Product 
@@ -28,7 +29,7 @@ namespace ProductCatalogue
             foreach (T product in list)
             {
               
-                Console.WriteLine(list);
+                Console.WriteLine(product);
             }
          
         }
@@ -44,6 +45,6 @@ namespace ProductCatalogue
             return 0;
         }
 
-     
+        
     }
 }

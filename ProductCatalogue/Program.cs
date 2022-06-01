@@ -30,6 +30,14 @@ namespace ProductCatalogue // Note: actual namespace depends on the project name
             movieCatalogue.addProduct(newMovie);
             movieCatalogue.addProduct(newMovie1);
 
+            //foreach (Movie movie in movieCatalogue.list)
+            //{
+            //    Console.WriteLine(movie.Title);
+            //}
+
+            //movieCatalogue.removeProduct(newMovie);
+
+
             //Console.WriteLine(movieCatalogue.viewCatalogue());
 
             //while (true)
@@ -37,13 +45,13 @@ namespace ProductCatalogue // Note: actual namespace depends on the project name
             //    Console.WriteLine(newMenu.mainMenuOptions());
             //}
 
-            //foreach (Movie movie in movieCatalogue.list)
-            //{
-            //    Console.WriteLine(movie.Title);
-            //} //- this works
+            foreach (Movie movie in movieCatalogue.list)
+            {
+                Console.WriteLine(movie.Title);
+            } //- this works
 
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "moviecatalogue.JSON");
-
+            Console.WriteLine(filePath);
             File.Create(filePath).Close();
 
 

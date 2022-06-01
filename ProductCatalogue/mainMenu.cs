@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+
 namespace ProductCatalogue
 {
     internal class mainMenu
@@ -50,20 +51,33 @@ namespace ProductCatalogue
 
                     if (Console.ReadLine() == "1")
                     {
-                       
-                      //  Catalogue<Book>.viewCatalogue(Catalogue<Book> bookCatalogue);
+
+                        Catalogue<Book>.viewCatalogue(IEnumerable<Book> bookCatalogue);
                     }
                     else if (Console.ReadLine() == "2")
                     {
-                     // Catalogue<Movie>.viewCatalogue(IEnumerable<Movie>movieCatalogue);
+                        Catalogue<Movie>.viewCatalogue(IEnumerable<Movie> movieCatalogue);
                     }
                     break;
                 //vie catalogue method
 
                 case "3":
                     Console.WriteLine("You have chosen to 'Remove a Product'");
+                    Console.WriteLine("Where would you like to remove a product from?");
+                    Console.WriteLine("1 - Remove from Book Catalogue");
+                    Console.WriteLine("2 - Remove from Movie Catalugue");
+                    if (Console.ReadLine() == "1")
+                    {
 
+                       Catalogue<Book>.removeProduct(Catalogue<Book>.bookCatalogue);
+                    }
+                    else if ((Console.ReadLine() == "2"))
+                    {
+                       Catalogue<Movie>.removeProduct(Catalogue<Movie>movieCatalogue);
+
+                    }
                     break;
+
 
                 case "4":
                     Console.WriteLine("You have chosen to 'Remove a Catalogue'");
