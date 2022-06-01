@@ -14,7 +14,7 @@ namespace ProductCatalogue
         private double _runtime { get => Runtime; }
         private string _synposis { get => Synopsis; }
 
-        public string Title;
+        //public string Title;
         public string Director;
         public double Runtime;
         public string Synopsis;
@@ -28,6 +28,10 @@ namespace ProductCatalogue
 
         }
 
+        //public override string ToString()
+        //{
+        //    return $"{Title}";
+        //}
         public static Movie createNewMovie(string title, string director, double runtime, string synopsis, double price)
         {
             if (title == null)

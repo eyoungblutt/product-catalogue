@@ -14,7 +14,7 @@ namespace ProductCatalogue
         private double _pageLength { get => PageLength; }
         private string _synopsis { get => Synopsis; }
 
-        public string Title;
+        //public string Title;
         public string Author;
         public double PageLength;
         public string Synopsis;

@@ -11,11 +11,19 @@ namespace ProductCatalogue
         private double _price { get => Price; }
 
         public double Price;
+        public string Title;
 
-        public Product(double price)
+        public Product(double price, string title)
+        {
+            Price = price;
+            Title = title;
+        }
+
+        protected Product(double price)
         {
             Price = price;
         }
+
         public double CalculateTax()
         {
             double markup = Price * 0.1;

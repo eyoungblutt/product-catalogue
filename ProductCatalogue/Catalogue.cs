@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ProductCatalogue
 {
-    internal  class Catalogue<T> where T : Product 
+    internal class Catalogue<T> where T : Product
         //this is the list within which your products will be stored. Can be more then one catalogue
     {
         public List<T> list = new List<T>();
-        
+
         public void addProduct(T product)
         {
             list.Add(product);
@@ -25,14 +25,23 @@ namespace ProductCatalogue
 
         public void viewCatalogue(IEnumerable<T> list)
         {
-
+            string result = " ";
             foreach (T title in list)
             {
-              
-                Console.WriteLine(title);
+
+                result = String.Format($"Product title = {title.Title}");
+
+                Console.WriteLine(result);
             }
-         
+
         }
+
+        public override string ToString()
+        {
+
+            return $"{list} ";
+        }
+
 
         public double CalculateTotal(double price)
         {
@@ -45,6 +54,6 @@ namespace ProductCatalogue
             return 0;
         }
 
-        
+
     }
 }

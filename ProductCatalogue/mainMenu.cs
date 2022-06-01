@@ -88,6 +88,9 @@ namespace ProductCatalogue
                         Console.WriteLine("What number do you want to remove - starting from zero?");
                         int number1 = Int32.Parse(Console.ReadLine());
                         movieCatalogue.removeProduct(number1);
+                        Console.WriteLine("Your new list is:");
+                        movieCatalogue.viewCatalogue(movieCatalogue.list);
+
                     }
                     break;
 
