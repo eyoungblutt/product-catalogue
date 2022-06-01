@@ -26,10 +26,10 @@ namespace ProductCatalogue
         public void viewCatalogue(IEnumerable<T> list)
         {
 
-            foreach (T product in list)
+            foreach (T title in list)
             {
               
-                Console.WriteLine(product);
+                Console.WriteLine(title);
             }
          
         }
