@@ -11,7 +11,7 @@ namespace ProductCatalogue
 
         public static bool addANewProductStatement(Catalogue<Book> bookCatalogue, Catalogue<Movie> movieCatalogue)
         {
-            Console.WriteLine("These are our product options:");
+            Console.WriteLine("These are your product options:");
             Console.WriteLine("1 - Movie");
             Console.WriteLine("2 - Book");
 
@@ -39,11 +39,10 @@ namespace ProductCatalogue
                     double Price = Convert.ToInt32(Console.ReadLine());
 
                     movieCatalogue.addProduct(Movie.createNewMovie(Title, Director, Runtime, Synopsis, Price));
-
+                    
 
                     Console.WriteLine($"{Title} by {Director} : {Synopsis}, {Runtime} ${Price} has been added to your movie catalogue");
 
-                   //Console.WriteLine(Program.());
                     break;
 
                 case "2":
@@ -74,7 +73,7 @@ namespace ProductCatalogue
                     break;
 
             }
-            return false;
+            return true;
         }
     }
 }

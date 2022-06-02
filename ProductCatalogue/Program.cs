@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 
 
@@ -15,6 +16,7 @@ namespace ProductCatalogue // Note: actual namespace depends on the project name
 
             mainMenu newMenu = new mainMenu(bookCatalogue, movieCatalogue);
 
+            Book newBook = new Book("New Book", "Joe", 55, "its a good book", 5);
 
             Movie newMovie = new Movie("Happy", "Joe", 45, "Good movie", 9)
             {
@@ -30,37 +32,29 @@ namespace ProductCatalogue // Note: actual namespace depends on the project name
             movieCatalogue.addProduct(newMovie);
             movieCatalogue.addProduct(newMovie1);
 
-            //foreach (Movie movie in movieCatalogue.list)
+            
+
+            //while (true)
             //{
-            //    Console.WriteLine(movie.Title);
+            //    Console.WriteLine(newMenu.mainMenuOptions());
             //}
 
-            //movieCatalogue.removeProduct(newMovie);
 
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "moviecatalogue.JSON");
+            Console.WriteLine(filePath);
+            File.Create(filePath).Close();
+            string jsonObject = JsonSerializer.Serialize(newMovie);
+            Console.WriteLine(jsonObject);
+            File.WriteAllText(filePath, jsonObject);
 
-            //Console.WriteLine(movieCatalogue.viewCatalogue());
+            string filePath2 = Path.Combine(Directory.GetCurrentDirectory(), "bookcatalogue.JSON");
+            Console.WriteLine(filePath2);
+            File.Create(filePath2).Close();
+            string jsonObject2 = JsonSerializer.Serialize(newBook);
+            Console.WriteLine(jsonObject2);
+            File.WriteAllText(filePath2, jsonObject2);
 
-            while (true)
-            {
-                Console.WriteLine(newMenu.mainMenuOptions());
-            }
-
-            //foreach (Movie movie in movieCatalogue.list)
-            //{
-            //    Console.WriteLine(movie.Title);
-            //} //- this works
-
-            //string filePath = Path.Combine(Directory.GetCurrentDirectory(), "moviecatalogue.JSON");
-            //Console.WriteLine(filePath);
-            //File.Create(filePath).Close();
-
-
-            //string jsonObject = JsonSerializer.Serialize<Movie>(newMovie);
-            //Console.WriteLine(jsonObject);
-            //File.WriteAllText(filePath, jsonObject);
-
-
-            //Append text??
+           
 
         }
 
