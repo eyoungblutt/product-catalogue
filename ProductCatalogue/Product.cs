@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,11 @@ namespace ProductCatalogue
         {
             Price = price;
             Title = title;
+        }
+
+        public static ICollection CalculateTax(int v1, int v2, int v3)
+        {
+            throw new NotImplementedException();
         }
 
         protected Product(double price)

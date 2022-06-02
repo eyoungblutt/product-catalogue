@@ -52,15 +52,10 @@ namespace ProductCatalogue
         }
 
 
-        public double CalculateTotal(double price)
+        public double CalculateTotal(List<T> list)
         {
-            double total = 0;
-            foreach (T item in list)
-            {
-                total += price;
-                return total;
-            }
-            return 0;
+            int total = list.Sum(price => Convert.ToInt32(price));
+            return total;
         }
 
 

@@ -32,7 +32,7 @@ namespace ProductCatalogue
 
 
         }
-
+        
         public static Book createNewBook(string title, string author, double pageLength, string synopsis, double price)
         {
             if (title == null)

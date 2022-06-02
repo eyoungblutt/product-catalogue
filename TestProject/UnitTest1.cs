@@ -10,18 +10,20 @@ namespace TestProject
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void addANewProductStatement_addNewProductCorrectly()
-        {
-            //Assert.AreEqual("title",ProductCatalogue.addANewProduct.addANewProductStatement("title"));
-        }
-       
-        [TestMethod]
+        //[TestMethod]
+        //public void CalculateTotal_addTotalCorrectly()
+        //{
+        //    Assert.Equals(22, ProductCatalogue.Catalogue<T>.CalculateTotal(new List<T> { 10, 12 }));
+        //    Assert.Equals(-3, ProductCatalogue.Catalogue<T>.CalculateTotal(new List<T> { 5, 2, -8 }));
+        //    Assert.Equals(22.5, ProductCatalogue.Catalogue<T>.CalculateTotal(new List<double> { 10, 12, 0.5 }));
+        //}
+        //[TestMethod]
 
-        public void createNewBook_textEnteredCorrectly()
-        {
-            Assert.AreEqual("Best Book Ever, Jon-Stewart St Paul 15 best book ever ever ever 19.95", ProductCatalogue.Book.createNewBook("Best Book Ever", "jon-stewart St Pauls", 15, "best book ever ever ever", 19.95));
-        }
+        //public void CalculateTotal_StringRecieved()
+        //{
+        //    Assert.ThrowsException<ArgumentNullException>(() => ProductCatalogue.Catalogue.CalculateTotal(new List<T> { 1, 2, "3" }));
+        //}
 
+        //}
     }
 }
