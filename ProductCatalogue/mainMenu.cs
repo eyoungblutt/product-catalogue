@@ -62,7 +62,6 @@ namespace ProductCatalogue
                         movieCatalogue.viewCatalogue(movieCatalogue.list);
                     }
                     break;
-                //vie catalogue method
 
                 case "3":
                     Console.WriteLine("You have chosen to 'Remove a Product'");
@@ -96,8 +95,23 @@ namespace ProductCatalogue
 
 
                 case "4":
-                    Console.WriteLine("You have chosen to 'Remove a Catalogue'");
-                    //remove a catalogue
+                    Console.WriteLine("You have chosen to 'Clear a Catalogue'");
+                    Console.WriteLine("What catalogue would you like to clear?");
+                    Console.WriteLine("1 - Clear Book Catalogue");
+                    Console.WriteLine("2 - Clear Movie Catalugue");
+                    
+                    if(Console.ReadLine() == "1")
+                    {
+                        bookCatalogue.clearCatalogue();
+                        Console.WriteLine("Your catalogue has been cleared");
+                    }
+                    else
+                    {
+                        
+                        movieCatalogue.clearCatalogue();
+                        Console.WriteLine("Your catalogue has been cleared");
+                    }
+
                     break;
 
             }

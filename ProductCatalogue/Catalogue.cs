@@ -36,6 +36,12 @@ namespace ProductCatalogue
 
         }
 
+        public void clearCatalogue()
+        {
+
+            list.Clear();
+        }
+
         public override string ToString()
         {
 
