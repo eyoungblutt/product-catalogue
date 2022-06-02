@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 
 
@@ -21,7 +22,7 @@ namespace ProductCatalogue
         }
 
 
-        public bool mainMenuOptions()
+        public void mainMenuOptions()
         {
 
             Console.WriteLine("Menu Options:");
@@ -40,7 +41,7 @@ namespace ProductCatalogue
                 case "1":
                     Console.WriteLine("You have chosen 'Add New Product to Catalogue' ");
                     Console.WriteLine();
-                    Console.WriteLine(addANewProduct.addANewProductStatement(bookCatalogue, movieCatalogue));
+                    addANewProduct.addANewProductStatement(bookCatalogue, movieCatalogue);
                     break;
 
                 case "2":
@@ -51,14 +52,17 @@ namespace ProductCatalogue
 
                     if (Console.ReadLine() == "1")
                     {
-
+                        string bookData = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "bookCatalogue.JSON"));
+                        Catalogue<Book> BookCatalogue = JsonSerializer.Deserialize<Catalogue<Book>>(bookData);
                         bookCatalogue.viewCatalogue(bookCatalogue.list);
+
                         break;
 
                     }
                     else 
                     {
-
+                        string movieData = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "movieCatalogue.JSON"));
+                        Catalogue<Movie> movieCatalogue = JsonSerializer.Deserialize<Catalogue<Movie>>(movieData);
                         movieCatalogue.viewCatalogue(movieCatalogue.list);
                     }
                     break;
@@ -70,23 +74,31 @@ namespace ProductCatalogue
                     Console.WriteLine("2 - Remove from Movie Catalugue");
                     if (Console.ReadLine() == "1")
                     {
-
+                        string bookData = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "bookCatalogue.JSON"));
+                         Catalogue<Book> BookCatalogue = JsonSerializer.Deserialize<Catalogue<Book>>(bookData);
                         bookCatalogue.viewCatalogue(bookCatalogue.list);
 
                         Console.WriteLine("What number do you want to remove - starting from zero?");
                         int number = Int32.Parse(Console.ReadLine());
 
                         bookCatalogue.removeProduct(number);
+                        string filePath2 = Path.Combine(Directory.GetCurrentDirectory(), "bookcatalogue.JSON");
+                        File.WriteAllText(filePath2, JsonSerializer.Serialize(bookCatalogue.list));
+                        Console.WriteLine("Your new list is:");
+                        bookCatalogue.viewCatalogue(bookCatalogue.list);
                         break;
                     }
 
                     else
                     {
 
-                        movieCatalogue.viewCatalogue(movieCatalogue.list);
+                        string movieData = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "movieCatalogue.JSON"));
+                        Catalogue<Movie> MovieCatalogue = JsonSerializer.Deserialize<Catalogue<Movie>>(movieData);
                         Console.WriteLine("What number do you want to remove - starting from zero?");
                         int number1 = Int32.Parse(Console.ReadLine());
                         movieCatalogue.removeProduct(number1);
+                        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "moviecatalogue.JSON");
+                        File.WriteAllText(filePath, JsonSerializer.Serialize(movieCatalogue.list));
                         Console.WriteLine("Your new list is:");
                         movieCatalogue.viewCatalogue(movieCatalogue.list);
 
@@ -102,20 +114,27 @@ namespace ProductCatalogue
                     
                     if(Console.ReadLine() == "1")
                     {
+                        string bookData = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "bookCatalogue.JSON"));
+                        Catalogue<Book> BookCatalogue = JsonSerializer.Deserialize<Catalogue<Book>>(bookData);
                         bookCatalogue.clearCatalogue();
+                        string filePath2 = Path.Combine(Directory.GetCurrentDirectory(), "bookcatalogue.JSON");
+                        File.WriteAllText(filePath2, JsonSerializer.Serialize(bookCatalogue.list));
                         Console.WriteLine("Your catalogue has been cleared");
                     }
                     else
                     {
-                        
+                        string movieData = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "movieCatalogue.JSON"));
+                        Catalogue<Movie> MovieCatalogue = JsonSerializer.Deserialize<Catalogue<Movie>>(movieData);
                         movieCatalogue.clearCatalogue();
+                        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "moviecatalogue.JSON");
+                        File.WriteAllText(filePath, JsonSerializer.Serialize(movieCatalogue.list));
                         Console.WriteLine("Your catalogue has been cleared");
                     }
 
                     break;
 
             }
-            return true;
+           
         }
 
     }

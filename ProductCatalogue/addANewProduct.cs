@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace ProductCatalogue
@@ -9,7 +10,7 @@ namespace ProductCatalogue
     internal class addANewProduct
     {
 
-        public static bool addANewProductStatement(Catalogue<Book> bookCatalogue, Catalogue<Movie> movieCatalogue)
+        public static void addANewProductStatement(Catalogue<Book> bookCatalogue, Catalogue<Movie> movieCatalogue)
         {
             Console.WriteLine("These are your product options:");
             Console.WriteLine("1 - Movie");
@@ -35,14 +36,15 @@ namespace ProductCatalogue
                     string Synopsis = Console.ReadLine();
 
                     Console.WriteLine("What is the price");
-                    
+
                     double Price = Convert.ToInt32(Console.ReadLine());
 
                     movieCatalogue.addProduct(Movie.createNewMovie(Title, Director, Runtime, Synopsis, Price));
-                    
+
 
                     Console.WriteLine($"{Title} by {Director} : {Synopsis}, {Runtime} ${Price} has been added to your movie catalogue");
-
+                    string filePath = Path.Combine(Directory.GetCurrentDirectory(), "moviecatalogue.JSON");
+                    File.WriteAllText(filePath, JsonSerializer.Serialize(movieCatalogue.list));
                     break;
 
                 case "2":
@@ -68,12 +70,13 @@ namespace ProductCatalogue
                     bookCatalogue.addProduct(Book.createNewBook(title, author, pageLength, synopsis, price));
 
                     Console.WriteLine($"{title} by {author} : {synopsis}, {pageLength} ${price} has been added to your book catalogue");
+                    string filePath2 = Path.Combine(Directory.GetCurrentDirectory(), "bookcatalogue.JSON");
+                    File.WriteAllText(filePath2, JsonSerializer.Serialize(bookCatalogue.list));
 
-                   
                     break;
 
             }
-            return true;
+
         }
     }
 }

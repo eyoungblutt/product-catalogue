@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 
 namespace ProductCatalogue
 {
     internal class Catalogue<T> where T : Product
-        //this is the list within which your products will be stored. Can be more then one catalogue
     {
+        
+
         public List<T> list = new List<T>();
 
+       
         public void addProduct(T product)
         {
             list.Add(product);
@@ -62,4 +65,7 @@ namespace ProductCatalogue
 
 
     }
+
+  
+    
 }

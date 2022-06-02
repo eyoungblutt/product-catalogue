@@ -9,15 +9,17 @@ namespace ProductCatalogue
     public class Book : Product
     {
 
-        private string _title { get => Title; }
-        private string _author { get => Author; }
-        private double _pageLength { get => PageLength; }
-        private string _synopsis { get => Synopsis; }
+        private string _title;
+        private string _author;
+        private double _pagelength;
+        private string _synopsis;
+        private double _price;
 
-        //public string Title;
-        public string Author;
-        public double PageLength;
-        public string Synopsis;
+        public string Title { get => _title; set => _title = value; }
+        public string Author { get => _author; set => _author = value; }
+        public double PageLength { get => _pagelength; set => _pagelength = value; }
+        public string Synopsis { get => _synopsis; set => _synopsis = value; }
+        public double Price { get => _price; set => _price = value; }
 
 
         public Book(string title, string author, double pageLength, string synopsis, double price) : base(price)
@@ -26,6 +28,7 @@ namespace ProductCatalogue
             Author = author;
             PageLength = pageLength;
             Synopsis = synopsis;
+            Price = price;
 
 
         }

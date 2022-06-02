@@ -6,32 +6,32 @@ using System.Threading.Tasks;
 
 namespace ProductCatalogue
 {
-    internal class Movie : Product
+    public class Movie : Product
     {
 
-        private string _title { get => Title; }
-        private string _director { get => Director; }
-        private double _runtime { get => Runtime; }
-        private string _synposis { get => Synopsis; }
+        private string _title;
+        private string _director;
+        private double _runtime;
+        private string _synopsis;
+        private double _price;
 
-        //public string Title;
-        public string Director;
-        public double Runtime;
-        public string Synopsis;
+        public string Title { get => _title; set => _title = value; }
+        public string Director { get => _director; set => _director = value; }
+        public double Runtime { get => _runtime; set => _runtime = value; }
+        public string Synopsis { get => _synopsis; set => _synopsis = value; }
+        public double Price { get => _price; set => _price = value; }   
 
         public Movie(string title, string director, double runtime, string synopsis, double price) : base(price)
         {
             Title = title;
             Director = director;
-           Runtime = runtime;
-          Synopsis = synopsis;
+            Runtime = runtime;
+            Synopsis = synopsis;
+            Price = price;
 
         }
 
-        //public override string ToString()
-        //{
-        //    return $"{Title}";
-        //}
+
         public static Movie createNewMovie(string title, string director, double runtime, string synopsis, double price)
         {
             if (title == null)
