@@ -9,20 +9,16 @@ namespace ProductCatalogue
 {
     public abstract class Product
     {
-        private double _price { get => Price; }
+        private double _price;
+        private string _title;
 
-        public double Price;
-        public string Title;
+        public double Price { get => _price; set => _price = value; }
+        public string Title { get => _title; set => _title = value; }
 
-        public Product(double price, string title)
+        public Product(string title, double price)
         {
             Price = price;
             Title = title;
-        }
-
-        public static ICollection CalculateTax(int v1, int v2, int v3)
-        {
-            throw new NotImplementedException();
         }
 
         protected Product(double price)

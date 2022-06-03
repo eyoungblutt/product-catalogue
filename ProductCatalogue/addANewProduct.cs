@@ -42,7 +42,7 @@ namespace ProductCatalogue
                     movieCatalogue.addProduct(Movie.createNewMovie(Title, Director, Runtime, Synopsis, Price));
 
 
-                    Console.WriteLine($"{Title} by {Director} : {Synopsis}, {Runtime} ${Price} has been added to your movie catalogue");
+                    Console.WriteLine($"{Title} by {Director} Synopsis: {Synopsis}, {Runtime}mins ${Price} has been added to your movie catalogue");
                     string filePath = Path.Combine(Directory.GetCurrentDirectory(), "moviecatalogue.JSON");
                     File.WriteAllText(filePath, JsonSerializer.Serialize(movieCatalogue.list ));
                     break;
@@ -69,7 +69,7 @@ namespace ProductCatalogue
 
                     bookCatalogue.addProduct(Book.createNewBook(title, author, pageLength, synopsis, price));
 
-                    Console.WriteLine($"{title} by {author} : {synopsis}, {pageLength} ${price} has been added to your book catalogue");
+                    Console.WriteLine($"{title} by {author} Synopsis: {synopsis}, {pageLength}pgs ${price} has been added to your book catalogue");
                    // Console.WriteLine($"Price including tax = {}");
                     string filePath2 = Path.Combine(Directory.GetCurrentDirectory(), "bookcatalogue.JSON");
                     File.WriteAllText(filePath2, JsonSerializer.Serialize(bookCatalogue.list));

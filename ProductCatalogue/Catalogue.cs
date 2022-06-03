@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProductCatalogue
 {
-    internal class Catalogue<T> where T : Product
+    public class Catalogue<T> where T : Product
     {
         
 
@@ -19,6 +19,10 @@ namespace ProductCatalogue
         {
             list.Add(product);
         }
+        public void addRange(List<T> list)
+        {
+            list.AddRange(list);
+        }
 
         public void removeProduct(int index)
         {
@@ -26,7 +30,7 @@ namespace ProductCatalogue
 
         }
 
-        public void viewCatalogue(IEnumerable<T> list)
+        public void viewCatalogue(List<T> list)
         {
             string result = " ";
             foreach (T title in list)

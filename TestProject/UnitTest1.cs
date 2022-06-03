@@ -2,28 +2,41 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ProductCatalogue;
 
 namespace TestProject
 {
     [TestClass]
     public class UnitTest1
     {
-        //[TestMethod]
-        //public void CalculateTotal_addTotalCorrectly()
-        //{
-        //    Assert.Equals(22, ProductCatalogue.Catalogue<T>.CalculateTotal(new List<T> { 10, 12 }));
-        //    Assert.Equals(-3, ProductCatalogue.Catalogue<T>.CalculateTotal(new List<T> { 5, 2, -8 }));
-        //    Assert.Equals(22.5, ProductCatalogue.Catalogue<T>.CalculateTotal(new List<double> { 10, 12, 0.5 }));
-        //}
-        //[TestMethod]
+        [TestMethod]
 
-        //public void CalculateTotal_StringRecieved()
-        //{
-        //    Assert.ThrowsException<ArgumentNullException>(() => ProductCatalogue.Catalogue.CalculateTotal(new List<T> { 1, 2, "3" }));
-        //}
+        public void testingSerialisation()
+        {
 
-        //}
+            Catalogue<Book> newCatalogue = new Catalogue<Book>();
+            Book newBook = new Book("New Book", "Joe", 55, "its a good book", 5);
+            newCatalogue.addProduct(newBook);
+            string json = JsonSerializer.Serialize(newCatalogue.list);
+            var testCatalogue = JsonSerializer.Deserialize<List<Book>>(json);
+            Assert.AreEqual(newCatalogue.list.First().Title, testCatalogue.First().Title);
+
+        }
+
+        [TestMethod]
+        public void testingSerialisationBook()
+        {
+
+            Book newBook = new Book("New Book", "Joe", 55, "its a good book", 5);
+            string json = JsonSerializer.Serialize(newBook);
+            Book result = JsonSerializer.Deserialize<Book>(json);
+            Assert.AreEqual(newBook.Title, result.Title);
+
+
+        }
+
     }
 }

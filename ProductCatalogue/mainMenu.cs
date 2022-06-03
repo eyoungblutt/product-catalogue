@@ -54,22 +54,24 @@ namespace ProductCatalogue
                     if (Console.ReadLine() == "1")
                     {
                         string bookData = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "bookCatalogue.JSON"));
-                        Catalogue<Book> bookCatalogue = JsonSerializer.Deserialize<Catalogue<Book>>(bookData)!;
+                        List<Book> listFromFile = JsonSerializer.Deserialize<List<Book>>(bookData)!;
+                        bookCatalogue.addRange(listFromFile);
 
                         bookCatalogue.viewCatalogue(bookCatalogue.list);
-                        Console.WriteLine($"Total price including tax = {bookCatalogue.CalculateTotal}");
+                       
 
 
                         break;
 
                     }
-                    else 
+                    else
                     {
                         string movieData = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "movieCatalogue.JSON"));
-                        Catalogue<Movie> movieCatalogue = JsonSerializer.Deserialize<Catalogue<Movie>>(movieData)!;
+                        List<Movie> movieListFromFile = JsonSerializer.Deserialize<List<Movie>>(movieData);
+                        movieCatalogue.addRange(movieListFromFile);
+
                         movieCatalogue.viewCatalogue(movieCatalogue.list);
                         Console.WriteLine($"Total price including tax = {movieCatalogue.CalculateTotal}");
-
                     }
                     break;
 
@@ -81,7 +83,9 @@ namespace ProductCatalogue
                     if (Console.ReadLine() == "1")
                     {
                         string bookData = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "bookCatalogue.JSON"));
-                         Catalogue<Book> bookCatalogue = JsonSerializer.Deserialize<Catalogue<Book>>(bookData)!;
+                        List<Book> listFromFile = JsonSerializer.Deserialize<List<Book>>(bookData);
+
+                        bookCatalogue.addRange(listFromFile);
                         bookCatalogue.viewCatalogue(bookCatalogue.list);
 
                         Console.WriteLine("What number do you want to remove - starting from zero?");
@@ -99,7 +103,8 @@ namespace ProductCatalogue
                     {
 
                         string movieData = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "movieCatalogue.JSON"));
-                        Catalogue<Movie> movieCatalogue = JsonSerializer.Deserialize<Catalogue<Movie>>(movieData)!;
+                        List<Movie> movieListFromFile = JsonSerializer.Deserialize<List<Movie>>(movieData);
+                        movieCatalogue.addRange(movieListFromFile);
                         Console.WriteLine("What number do you want to remove - starting from zero?");
                         int number1 = Int32.Parse(Console.ReadLine());
                         movieCatalogue.removeProduct(number1);
@@ -117,11 +122,13 @@ namespace ProductCatalogue
                     Console.WriteLine("What catalogue would you like to clear?");
                     Console.WriteLine("1 - Clear Book Catalogue");
                     Console.WriteLine("2 - Clear Movie Catalugue");
-                    
-                    if(Console.ReadLine() == "1")
+
+                    if (Console.ReadLine() == "1")
                     {
                         string bookData = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "bookCatalogue.JSON"));
-                        Catalogue<Book> bookCatalogue = JsonSerializer.Deserialize<Catalogue<Book>>(bookData)!;
+                        List<Book> listFromFile = JsonSerializer.Deserialize<List<Book>>(bookData);
+
+                        bookCatalogue.addRange(listFromFile);
                         bookCatalogue.clearCatalogue();
                         string filePath2 = Path.Combine(Directory.GetCurrentDirectory(), "bookcatalogue.JSON");
                         File.WriteAllText(filePath2, JsonSerializer.Serialize(bookCatalogue.list));
@@ -130,7 +137,8 @@ namespace ProductCatalogue
                     else
                     {
                         string movieData = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "movieCatalogue.JSON"));
-                        Catalogue<Movie> movieCatalogue = JsonSerializer.Deserialize<Catalogue<Movie>>(movieData)!;
+                        List<Movie> movieListFromFile = JsonSerializer.Deserialize<List<Movie>>(movieData);
+                        movieCatalogue.addRange(movieListFromFile);
                         movieCatalogue.clearCatalogue();
                         string filePath = Path.Combine(Directory.GetCurrentDirectory(), "moviecatalogue.JSON");
                         File.WriteAllText(filePath, JsonSerializer.Serialize(movieCatalogue.list));
@@ -140,7 +148,7 @@ namespace ProductCatalogue
                     break;
 
             }
-           
+
         }
 
     }
