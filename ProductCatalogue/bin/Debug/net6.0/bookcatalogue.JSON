@@ -1,1 +1,9 @@
-[{"Title":"book","Author":"joe","PageLength":8,"Synopsis":"kk","Price":9}]
+[
+  {
+    "Title": "book",
+    "Author": "joe",
+    "PageLength": 8,
+    "Synopsis": "kk",
+    "Price": 9
+  }
+]

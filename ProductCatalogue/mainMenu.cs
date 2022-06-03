@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+
 
 
 
@@ -55,6 +55,7 @@ namespace ProductCatalogue
                     {
                         string bookData = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "bookCatalogue.JSON"));
                         Catalogue<Book> bookCatalogue = JsonSerializer.Deserialize<Catalogue<Book>>(bookData)!;
+
                         bookCatalogue.viewCatalogue(bookCatalogue.list);
                         Console.WriteLine($"Total price including tax = {bookCatalogue.CalculateTotal}");
 
